@@ -41,6 +41,7 @@ export class WorkerWithPeopleData {
 
         this.#dataListToPrint = this.#peopleDataList.slice();
         this.#printData(this.#dataListToPrint);
+        this.#printStatesList();
     }
 
     // to print info about person
@@ -249,6 +250,23 @@ export class WorkerWithPeopleData {
         }
 
         return;
+    }
+
+    // to print list of states to filtration
+    #printStatesList() {
+        let statesList = this.#peopleDataList.map(personData => personData.adress.state);
+        let statesListWithoutDuplicates = Array.from(new Set(statesList)).sort((a, b) => {
+            if (a > b) return 1;
+            if (a < b) return -1;
+            return 0;
+        });
+
+        let listBase = document.querySelector(".filter-by-state__menu");
+        statesListWithoutDuplicates.forEach(state => {
+            listBase.innerHTML += `
+                <li class="filter-by-state__menu-element" data-value="${state}">${state}</li>
+            `;
+        });
     }
 
     // set default state of pagination
