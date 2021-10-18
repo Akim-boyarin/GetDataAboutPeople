@@ -1,0 +1,22 @@
+@mixin set-flex($flex-direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin to-center() {
+    @include set-flex(row, center, center);
+}
+
+@mixin decorate-block() {
+    border: 1px solid #e6e6e6;
+    background-color: #ffffff;
+    box-shadow: -1px 1px 2px 0px rgba(121, 121, 121, 0.51);
+}
+
+@mixin style-button($background-size: 50%, $img-url: none, $position: 50%, $repeat: no-repeat, ) {
+    background: url($img-url) $position $repeat;
+    background-size: $background-size;
+    background-color: #ffffff;
+}

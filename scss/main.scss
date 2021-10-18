@@ -1,0 +1,24 @@
+// ------------------------------------------------Tools------------------------------------------------
+
+// Variables
+@import "./tools/_variables.scss";
+
+// Mixins
+@import "./tools/_mixins.scss";
+
+// Nullstyles
+@import "./tools/_nullstyles.scss";
+
+// ------------------------------------------------Code-------------------------------------------------
+
+// Global section
+@import "./_global-section.scss";
+
+// Filtration section 
+@import "./_filtration-section.scss";
+
+// Table section 
+@import "./_table-section.scss";
+
+// Info section 
+@import "./_info-section.scss";
